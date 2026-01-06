@@ -45,7 +45,7 @@ export default function Dashboard() {
         </button>
       </div>
 
-      {/* 🔥 EXERCISE LIST BUTTON */}
+      {/* EXERCISE LIBRARY */}
       <div
         style={styles.exerciseBtn}
         onClick={() => navigate("/exercises")}
@@ -59,7 +59,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* 📅 CLICKABLE CALENDAR */}
+      {/* WORKOUT CALENDAR */}
       <h3 style={styles.sectionTitle}>Workout Calendar</h3>
 
       <div style={styles.dateStrip}>
@@ -95,7 +95,7 @@ export default function Dashboard() {
         )}
       </div>
 
-      {/* 📊 WORKOUT CHART */}
+      {/* WORKOUT CHART */}
       {selectedDate && workoutData[selectedDate] && (
         <>
           <h3 style={styles.sectionTitle}>
@@ -125,7 +125,7 @@ export default function Dashboard() {
         </>
       )}
 
-      {/* PLANS */}
+      {/* TODAY'S PLAN */}
       <h3 style={styles.sectionTitle}>Today’s Plan</h3>
 
       <div style={styles.planGrid}>
@@ -134,7 +134,7 @@ export default function Dashboard() {
           emoji="🌿"
           duration="10 min"
           color="#6ca4caff"
-          route="/details/meditation"
+          route="/calm-start"
         />
 
         <PlanCard
@@ -182,36 +182,22 @@ const styles = {
     padding: "22px",
     background: "linear-gradient(to bottom, #F6F7FB, #EEF1FF)"
   },
-
   header: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: "20px"
   },
-
-  greeting: {
-    margin: 0,
-    fontSize: "22px",
-    color: "#000"
-  },
-
-  date: {
-    margin: 0,
-    fontSize: "13px",
-    color: COLORS.textLight
-  },
-
+  greeting: { margin: 0, fontSize: "22px" },
+  date: { margin: 0, fontSize: "13px", color: COLORS.textLight },
   logout: {
     border: "none",
-    background: "#211b1bff",
-    color: "#fff",
+    background: "#141414ff",
+    color: "#e2d7d7ff",
     padding: "8px 14px",
     borderRadius: "20px",
-    cursor: "pointer",
-    fontSize: "13px"
+    cursor: "pointer"
   },
-
   highlightCard: {
     background: "linear-gradient(135deg, #6C63FF, #8B85FF)",
     borderRadius: "22px",
@@ -219,31 +205,19 @@ const styles = {
     color: "#fff",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
     marginBottom: "20px"
   },
-
-  highlightTitle: {
-    margin: 0,
-    fontSize: "20px"
-  },
-
-  highlightSub: {
-    margin: "6px 0 0",
-    fontSize: "13px",
-    opacity: 0.9
-  },
-
+  
+  highlightTitle: { margin: 0 },
+  highlightSub: { margin: "6px 0 0", fontSize: "13px" },
   startBtn: {
     background: "#fff",
     color: COLORS.primary,
     border: "none",
     padding: "10px 18px",
     borderRadius: "20px",
-    cursor: "pointer",
-    fontWeight: "600"
+    cursor: "pointer"
   },
-
   exerciseBtn: {
     display: "flex",
     alignItems: "center",
@@ -254,28 +228,10 @@ const styles = {
     marginBottom: "24px",
     cursor: "pointer"
   },
-
   exerciseIcon: { fontSize: "28px" },
-
-  exerciseTitle: {
-    margin: 0,
-    fontSize: "16px",
-    fontWeight: "600",
-    color: "#000"
-  },
-
-  exerciseText: {
-    margin: 0,
-    fontSize: "13px",
-    color: COLORS.textLight
-  },
-
-  dateStrip: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginBottom: "20px"
-  },
-
+  exerciseTitle: { margin: 0, fontSize: "16px" },
+  exerciseText: { margin: 0, fontSize: "13px", color: COLORS.textLight },
+  dateStrip: { display: "flex", justifyContent: "space-between" },
   dateBox: {
     width: "42px",
     height: "54px",
@@ -285,60 +241,55 @@ const styles = {
     alignItems: "center",
     justifyContent: "center"
   },
-
-  sectionTitle: {
-    fontSize: "18px",
-    marginBottom: "14px",
-    color: "#000"
-  },
-
+  sectionTitle: { fontSize: "18px", margin: "20px 0 14px" },
   chartCard: {
     background: "#fff",
     padding: "16px",
-    borderRadius: "16px",
-    marginBottom: "20px"
+    borderRadius: "16px"
   },
-
   chartRow: { marginBottom: "12px" },
-
-  chartLabel: {
-    fontSize: "13px",
-    color: "#000",
-    textTransform: "capitalize"
-  },
-
-  chartBarBg: {
-    background: "#E5E7EB",
-    borderRadius: "10px",
-    overflow: "hidden"
-  },
-
+  chartLabel: { fontSize: "13px" },
+  chartBarBg: { background: "#E5E7EB", borderRadius: "10px" },
   chartBar: {
     height: "24px",
     background: COLORS.primary,
     color: "#fff",
     fontSize: "12px",
+    paddingLeft: "8px",
     display: "flex",
-    alignItems: "center",
-    paddingLeft: "8px"
+    alignItems: "center"
   },
-
   planGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
     gap: "16px"
   },
-
-  planCard: {
-    borderRadius: "20px",
-    padding: "16px",
-    cursor: "pointer"
+  planCard: { borderRadius: "20px", padding: "16px", cursor: "pointer" },
+  planEmoji: { fontSize: "26px" },
+  planText: { fontSize: "13px", color: COLORS.textLight },
+  greeting: {
+  margin: 0,
+  fontSize: "22px",
+  color: COLORS.heading   // ✅ ADDED
   },
 
-  planEmoji: { fontSize: "26px", marginBottom: "6px" },
+  sectionTitle: {
+    fontSize: "18px",
+    margin: "20px 0 14px",
+    color: COLORS.heading   // ✅ ADDED
+  },
 
-  planText: {
-    fontSize: "13px",
-    color: COLORS.textLight
-  }
+  highlightTitle: {
+    margin: 0,
+    fontSize: "20px",
+    color: COLORS.white     // ✅ ADDED
+  },
+
+  exerciseTitle: {
+    margin: 0,
+    fontSize: "16px",
+    fontWeight: "600",
+    color: COLORS.heading   // ✅ ADDED
+  },
+
 };

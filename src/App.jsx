@@ -4,7 +4,10 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import ActivityDetails from "./pages/ActivityDetails";
-import ExerciseList from "./pages/ExerciseList"; // ✅ IMPORTANT
+import ExerciseList from "./pages/ExerciseList";
+
+// ✅ IMPORT CalmStart (THIS WAS MISSING)
+import CalmStart from "./components/CalmStart";
 
 function App() {
   return (
@@ -17,10 +20,13 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
+        {/* ✅ Calm Start Exercise Flow */}
+        <Route path="/calm-start" element={<CalmStart />} />
+
         {/* ACTIVITY DETAILS (DYNAMIC) */}
         <Route path="/details/:activityId" element={<ActivityDetails />} />
 
-        {/* ✅ EXERCISE LIST PAGE */}
+        {/* EXERCISE LIST PAGE */}
         <Route path="/exercises" element={<ExerciseList />} />
       </Routes>
     </BrowserRouter>
