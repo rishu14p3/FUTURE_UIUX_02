@@ -8,6 +8,9 @@ import ExerciseList from "./pages/ExerciseList";
 
 // ✅ IMPORT CalmStart (THIS WAS MISSING)
 import CalmStart from "./components/CalmStart";
+import EnergyBoost from "./components/EnergyBoost";
+import DeepFocus from "./components/DeepFocus";
+import MindfulFocus from "./components/MindfulFocus";
 
 function App() {
   return (
@@ -20,8 +23,11 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
-        {/* ✅ Calm Start Exercise Flow */}
+        {/* ✅ Calm Start, Energy Boost, Deep Focus and Mindful Focus Exercise Flow */}
         <Route path="/calm-start" element={<CalmStart />} />
+        <Route path="/energy-boost" element={<EnergyBoost />} />
+        <Route path="/deep-focus" element={<DeepFocus />} />
+        <Route path="/mindful-focus" element={<MindfulFocus />} />
 
         {/* ACTIVITY DETAILS (DYNAMIC) */}
         <Route path="/details/:activityId" element={<ActivityDetails />} />

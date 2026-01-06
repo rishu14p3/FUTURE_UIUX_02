@@ -39,7 +39,7 @@ export default function Dashboard() {
 
         <button
           style={styles.startBtn}
-          onClick={() => navigate("/details/focus")}
+          onClick={() => navigate("/mindful-focus")} 
         >
           Start →
         </button>
@@ -142,7 +142,7 @@ export default function Dashboard() {
           emoji="⚡"
           duration="8 min"
           color="#d081aeff"
-          route="/details/energy"
+          route="/energy-boost" 
         />
 
         <PlanCard
@@ -150,7 +150,7 @@ export default function Dashboard() {
           emoji="🧠"
           duration="15 min"
           color="#78e1b0ff"
-          route="/details/focus"
+          route="/deep-focus" 
         />
       </div>
     </div>
